@@ -225,8 +225,10 @@
           return;
         }
         if (st > lastScrollTop) {
+          console.log(st + " mm  " + lastScrollTop + "  "  + $(this).scrollTop());
           $('.navbar.scroll-hide').addClass("closed");
-        } else if(lastScrollTop<=100) {
+        } else if ($(this).scrollTop() == 0 ||(lastScrollTop-st)!=100 ){
+            console.log(st + " tt  " + lastScrollTop+ "  "  + $(this).scrollTop());
           $('.navbar.scroll-hide').removeClass("closed");
         }
         return lastScrollTop = st;
