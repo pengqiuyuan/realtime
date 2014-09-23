@@ -6,7 +6,9 @@ Real time statistics
 1、整体统计
    GET   /api/all
    参数   无
-   响应{
+   响应
+   
+   {
         "totalFunds":"987,978,999.00", //总资金
         "totalRevenue":"7,978,999.00", //总收益
         "totalAccountPeople":"12,999",  //总开户数
@@ -57,7 +59,8 @@ Real time statistics
 2、公司统计
    GET   /api/companys
    参数   无
-   响应{
+   响应
+   {
     "companys":[{
         "id":12,
         "name":"北京热电", //单位名称
@@ -73,7 +76,8 @@ Real time statistics
 3、公司详情
    GET  /api/companys/{id}
    参数  id
-   响应{
+   响应
+   {
         "id":12,
         "name":"北京热电",
         "totalFunds":"987,978,999.00", //总资金
@@ -122,10 +126,11 @@ Real time statistics
             {},{},{},..],
 
    }
-4、大事记  这一块儿的api响应参数需要和凯飞讨论
+4、大事记  
    GET   /api/timeline
    参数   无
-   响应{
+   响应
+   {
     "timeline":[{
         "id":12,
         "allMoney":"20000.00", //总金额
@@ -139,7 +144,8 @@ Real time statistics
    GET  /api/history
    参数  startDate 起始时间  09/02/2014
         endDate 截止时间    09/16/2014
-   响应{
+   响应
+   {
      "history":[{
         "id":12,
         "time":"2014-06-12",    //日期
