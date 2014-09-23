@@ -68,7 +68,7 @@
     <script src="javascripts/respond.js" type="text/javascript"></script>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
 
-    <script src="javascripts/data_index.js" type="text/javascript"></script>
+    <script src="javascripts/data_details.js" type="text/javascript"></script>
 </head>
   <body>
     <div class="modal-shiftfix">
@@ -117,9 +117,9 @@
               <div class="nav-collapse">
                   <ul class="nav">
                       <li>
-                          <a class="current" href="index.html"><span aria-hidden="true" class="se7en-home"></span>整体统计</a>
+                          <a href="index.html"><span aria-hidden="true" class="se7en-home"></span>整体统计</a>
                       </li>
-                      <li><a href="datatables.html">
+                      <li><a class="current" href="datatables.html">
                           <span aria-hidden="true" class="se7en-feed"></span>公司统计</a>
                       </li>
                       <li><a href="timeline.html">
@@ -134,10 +134,20 @@
       </div>
       <!-- End Navigation -->
       <div class="container-fluid main-content">
-        <div class="row">
+      <div class="row">
           <div class="col-lg-12">
               <div class="widget-container fluid-height clearfix">
                   <div class="heading">
+                      <div class="col-md-1">
+                          <a class="current" href="datatables.html" style="font-size: 1.3em;">
+                              <span aria-hidden="true" class="se7en-feed"></span>
+                              返回</a>
+                      </div>
+                      <div class="col-md-1">
+                          <a class="current" id="comName" href="datatables.html" style="font-size: 1.3em;">
+                              </a>
+                      </div>
+
                       <input class="btn btn-primary" style="margin-bottom: 25px;float: right;" type="submit" value="查询">
                       <div class="col-md-3" style="float: right;height: 30px;width: 200px;">
                           <div class="input-group date datepicker">
@@ -152,230 +162,231 @@
                   </div>
               </div>
           </div>
-        </div>
-        <!-- Statistics -->
-        <div class="row">
+      </div>
+      <!-- Statistics -->
+      <div class="row">
           <div class="col-lg-12">
-            <div class="widget-container stats-container">
-              <div class="col-md-4">
-                  <div class="text" style="height: 25px;font-size: 1.4em;">
-                      总金额(元)
-                  </div>
-                <div class="number">
+              <div class="widget-container stats-container">
+                  <div class="col-md-4">
+                      <div class="text" style="height: 25px;font-size: 1.4em;">
+                          总金额(元)
+                      </div>
+                      <div class="number">
 
-                    <span id="totalFunds"></span>
-                </div>
-                <div class="text">
-                    <span id="increaseFunds" style="color: #60c560"></span>
-                </div>
-              </div>
-              <div class="col-md-2">
-                  <div class="text" style="height: 25px;font-size: 1.4em;">
-                      总开户
+                          <span id="totalFunds"></span>
+                      </div>
+                      <div class="text">
+                          <span id="increaseFunds" style="color:#60c560"></span>
+                      </div>
                   </div>
-                <div class="number">
+                  <div class="col-md-2">
+                      <div class="text" style="height: 25px;font-size: 1.4em;">
+                          总开户
+                      </div>
+                      <div class="number">
 
-                    <span id="totalAccountPeople"></span>
-                </div>
-                <div class="text">
-                  <span id="increaseAccount" style="color: #60c560"></span>
-                </div>
-              </div>
-              <div class="col-md-2">
-                  <div class="text" style="height: 25px;font-size: 1.4em;">
-                      总签约
+                          <span id="totalAccountPeople"></span>
+                      </div>
+                      <div class="text">
+                          <span id="increaseAccount" style="color:#60c560"></span>
+                      </div>
                   </div>
-                <div class="number">
+                  <div class="col-md-2">
+                      <div class="text" style="height: 25px;font-size: 1.4em;">
+                          总签约
+                      </div>
+                      <div class="number">
 
-                  <span id="totalDealsPepple"></span>
-                </div>
-                <div class="text">
-                  <span id="increaseDeals" style="color: #60c560"></span>
-                </div>
-              </div>
-              <div class="col-md-4">
-                  <div class="text" style="height: 25px;font-size: 1.4em;">
-                      总收益(元)
+                          <span id="totalDealsPepple"></span>
+                      </div>
+                      <div class="text">
+                          <span id="increaseDeals" style="color:#60c560"></span>
+                      </div>
                   </div>
-                <div class="number">
-                    <span id="totalRevenue"></span>
-                </div>
-                <div class="text">
-                    <span id="increaseRevenue" style="color: #60c560"></span>
-                </div>
+                  <div class="col-md-4">
+                      <div class="text" style="height: 25px;font-size: 1.4em;">
+                          总收益(元)
+                      </div>
+                      <div class="number">
+
+                          <span id="totalRevenue"></span>
+                      </div>
+                      <div class="text">
+                          <span id="increaseRevenue" style="color:#60c560"></span>
+                      </div>
+                  </div>
               </div>
-            </div>
           </div>
-        </div>
-        <!-- End Statistics -->
-        <div class="row">
+      </div>
+      <!-- End Statistics -->
+      <div class="row">
           <!-- Area Charts:Morris -->
           <div class="col-md-8" style="float: right;">
-            <div class="widget-container fluid-height">
-              <div class="heading">
-                <i class="icon-bar-chart"></i>
-                图表统计:今日购买与今日赎回
-                <i class="pull-right"><label><input name="optionsRadios1" id="checkboxBuy"  type="checkbox" value=""><span></span><span>查看详情</span></label></i>
+              <div class="widget-container fluid-height">
+                  <div class="heading">
+                      <i class="icon-bar-chart"></i>
+                      图表统计:今日购买与今日赎回
+                      <i class="pull-right"><label><input name="optionsRadios1" id="checkboxBuy"  type="checkbox" value=""><span></span><span>查看详情</span></label></i>
+                  </div>
+                  <div class="widget-content padded text-center">
+                      <div class="graph-container">
+                          <div class="caption"></div>
+                          <div class="graph" id="hero-tadaytobuy"></div>
+                      </div>
+                  </div>
               </div>
-              <div class="widget-content padded text-center">
-                <div class="graph-container">
-                  <div class="caption"></div>
-                  <div class="graph" id="hero-tadaytobuy"></div>
-                </div>
-              </div>
-            </div>
           </div>
           <!-- Area Charts:Morris --><!-- Chat -->
           <div class="col-md-4">
-            <div class="widget-container scrollable chat" style="height: 427px;">
-              <div class="heading">
-                <i class="icon-comments"></i>数据统计<i class="icon-smile pull-right"></i>
-              </div>
-              <div class="widget-content padded" style="height: 50%">
-                  <div class="stats-container">
-                      <div class="col-md-12">
-                          <div class="text" style="height: 25px;font-size: 1.4em;">
-                              今日购买(元)
-                          </div>
-                          <div class="number">
-                              <span id="todayToBuy"></span>
-                          </div>
-                          <div class="text">
+              <div class="widget-container scrollable chat" style="height: 427px;">
+                  <div class="heading">
+                      <i class="icon-comments"></i>数据统计<i class="icon-smile pull-right"></i>
+                  </div>
+                  <div class="widget-content padded" style="height: 50%">
+                      <div class="stats-container">
+                          <div class="col-md-12">
+                              <div class="text" style="height: 25px;font-size: 1.4em;">
+                                  今日购买(元)
+                              </div>
+                              <div class="number">
+                                  <span id="todayToBuy"></span>
+                              </div>
+                              <div class="text">
 
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="widget-content padded" style="height: 50%">
+                      <div class="stats-container">
+                          <div class="col-md-12">
+                              <div class="text" style="height: 25px;font-size: 1.4em;">
+                                  今日赎回(元)
+                              </div>
+                              <div class="number">
+                                  <span id="todayToRedeem"></span>
+                              </div>
+                              <div class="text" style="display: none" id="comAndRealRedeem">
+                                  <span id="todayToRedeemCom" style="color:#ff0000"></span> + <span id="totayToRedeemReal" style="color:#60c560"></span>
+                              </div>
                           </div>
                       </div>
                   </div>
               </div>
-              <div class="widget-content padded" style="height: 50%">
-                  <div class="stats-container">
-                      <div class="col-md-12">
-                          <div class="text" style="height: 25px;font-size: 1.4em;">
-                              今日赎回(元)
-                          </div>
-                          <div class="number">
-                              <span id="todayToRedeem"></span>
-                          </div>
-                          <div class="text" style="display: none" id="comAndRealRedeem">
-                              <span id="todayToRedeemCom" style="color: #ff0000"></span> + <span id="totayToRedeemReal" style="color:#60c560"></span>
-                          </div>
-                      </div>
-                  </div>
-                </div>
-            </div>
           </div>
           <!-- End Chat -->
-        </div>
-        <div class="row">
-              <!-- Area Charts:Morris -->
-              <div class="col-md-8" style="float: right;">
-                  <div class="widget-container fluid-height">
-                      <div class="heading">
-                          <i class="icon-bar-chart"></i>图表统计:今日开户与今日签约
-                      </div>
-                      <div class="widget-content padded text-center">
-                          <div class="graph-container">
-                              <div class="caption"></div>
-                              <div class="graph" id="hero-tadaytoaccount"></div>
-                          </div>
+      </div>
+      <div class="row">
+          <!-- Area Charts:Morris -->
+          <div class="col-md-8" style="float: right;">
+              <div class="widget-container fluid-height">
+                  <div class="heading">
+                      <i class="icon-bar-chart"></i>图表统计:今日开户与今日签约
+                  </div>
+                  <div class="widget-content padded text-center">
+                      <div class="graph-container">
+                          <div class="caption"></div>
+                          <div class="graph" id="hero-tadaytoaccount"></div>
                       </div>
                   </div>
               </div>
-              <!-- Area Charts:Morris --><!-- Chat -->
-              <div class="col-md-4">
-                  <div class="widget-container scrollable chat" style="height: 427px;">
-                      <div class="heading">
-                          <i class="icon-comments"></i>数据统计<i class="icon-smile pull-right"></i>
-                      </div>
-                      <div class="widget-content padded" style="height: 50%">
-                          <div class="stats-container">
-                              <div class="col-md-12">
-                                  <div class="text" style="height: 25px;font-size: 1.4em;">
-                                      今日开户(人)
-                                  </div>
-                                  <div class="number">
-                                      <span id="todayAccountPeople"></span>
-                                  </div>
-                                  <div class="text">
-
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="widget-content padded" style="height: 50%">
-                          <div class="stats-container">
-                              <div class="col-md-12">
-                                  <div class="text" style="height: 25px;font-size: 1.4em;">
-                                      今日签约(人)
-                                  </div>
-                                  <div class="number">
-                                      <span id="todayDealsPepple"></span>
-                                  </div>
-                                  <div class="text" >
-
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!-- End Chat -->
           </div>
-        <div class="row">
-              <!-- Area Charts:Morris -->
-              <div class="col-md-8" style="float: right;">
-                  <div class="widget-container fluid-height">
-                      <div class="heading">
-                          <i class="icon-bar-chart"></i>图表统计:今日购买笔数与今日赎回笔数
-                          <i class="pull-right"><label><input name="optionsRadios1" id="checkboxBuyNum" type="checkbox" value=""><span></span><span>查看详情</span></label></i>
-                      </div>
-                      <div class="widget-content padded text-center">
-                          <div class="graph-container">
-                              <div class="caption"></div>
-                              <div class="graph" id="hero-tadaytobuynum"></div>
-                          </div>
-                      </div>
+          <!-- Area Charts:Morris --><!-- Chat -->
+          <div class="col-md-4">
+              <div class="widget-container scrollable chat" style="height: 427px;">
+                  <div class="heading">
+                      <i class="icon-comments"></i>数据统计<i class="icon-smile pull-right"></i>
                   </div>
-              </div>
-              <!-- Area Charts:Morris --><!-- Chat -->
-              <div class="col-md-4">
-                  <div class="widget-container scrollable chat" style="height: 427px;">
-                      <div class="heading">
-                          <i class="icon-comments"></i>数据统计<i class="icon-smile pull-right"></i>
-                      </div>
-                      <div class="widget-content padded" style="height: 50%">
-                          <div class="stats-container">
-                              <div class="col-md-12">
-                                  <div class="text" style="height: 25px;font-size: 1.4em;">
-                                      今日购买笔数
-                                  </div>
-                                  <div class="number">
-                                      <span id="todayToBuyNum"></span>
-                                  </div>
-                                  <div class="text">
+                  <div class="widget-content padded" style="height: 50%">
+                      <div class="stats-container">
+                          <div class="col-md-12">
+                              <div class="text" style="height: 25px;font-size: 1.4em;">
+                                  今日开户(人)
+                              </div>
+                              <div class="number">
+                                  <span id="todayAccountPeople"></span>
+                              </div>
+                              <div class="text" style="width:200px">
 
-                                  </div>
                               </div>
                           </div>
                       </div>
-                      <div class="widget-content padded" style="height: 50%">
-                          <div class="stats-container">
-                              <div class="col-md-12">
-                                  <div class="text" style="height: 25px;font-size: 1.4em;">
-                                      今日赎回笔数
-                                  </div>
-                                  <div class="number">
-                                      <span id="todayToRedeemNum"></span>
-                                  </div>
-                                  <div class="text" style="display: none" id="comAndRealRedeemNum">
-                                      <span id="todayToRedeemComNum" style="color:#ff0000"></span>+<span id="todayToRedeemRealNum" style="color: #60c560"></span>
-                                  </div>
+                  </div>
+                  <div class="widget-content padded" style="height: 50%">
+                      <div class="stats-container">
+                          <div class="col-md-12">
+                              <div class="text" style="height: 25px;font-size: 1.4em;">
+                                  今日签约(人)
+                              </div>
+                              <div class="number">
+                                  <span id="todayDealsPepple"></span>
+                              </div>
+                              <div class="text" style="width:200px">
+
                               </div>
                           </div>
                       </div>
                   </div>
               </div>
-              <!-- End Chat -->
           </div>
+          <!-- End Chat -->
+      </div>
+      <div class="row">
+          <!-- Area Charts:Morris -->
+          <div class="col-md-8" style="float: right;">
+              <div class="widget-container fluid-height">
+                  <div class="heading">
+                      <i class="icon-bar-chart"></i>图表统计:今日购买笔数与今日赎回笔数
+                      <i class="pull-right"><label><input name="optionsRadios1" id="checkboxBuyNum" type="checkbox" value=""><span></span><span>查看详情</span></label></i>
+                  </div>
+                  <div class="widget-content padded text-center">
+                      <div class="graph-container">
+                          <div class="caption"></div>
+                          <div class="graph" id="hero-tadaytobuynum"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Area Charts:Morris --><!-- Chat -->
+          <div class="col-md-4">
+              <div class="widget-container scrollable chat" style="height: 427px;">
+                  <div class="heading">
+                      <i class="icon-comments"></i>数据统计<i class="icon-smile pull-right"></i>
+                  </div>
+                  <div class="widget-content padded" style="height: 50%">
+                      <div class="stats-container">
+                          <div class="col-md-12">
+                              <div class="text" style="height: 25px;font-size: 1.4em;">
+                                  今日购买笔数
+                              </div>
+                              <div class="number">
+                                  <span id="todayToBuyNum"></span>
+                              </div>
+                              <div class="text" style="width:200px">
+
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="widget-content padded" style="height: 50%">
+                      <div class="stats-container">
+                          <div class="col-md-12">
+                              <div class="text" style="height: 25px;font-size: 1.4em;">
+                                  今日赎回笔数
+                              </div>
+                              <div class="number">
+                                  <span id="todayToRedeemNum"></span>
+                              </div>
+                              <div class="text" style="display: none" id="comAndRealRedeemNum">
+                                  <span id="todayToRedeemComNum" style="color: #ff0000"></span>+<span id="todayToRedeemRealNum" style="color:#60c560"></span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- End Chat -->
+      </div>
       </div>
     </div>
   </body>

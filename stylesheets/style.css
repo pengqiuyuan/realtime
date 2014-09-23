@@ -3121,13 +3121,13 @@ body.fourofour {
     font-family: 'Lato';
     font-style: normal;
     font-weight: 100;
-    src: local('Lato Hairline'), local('Lato-Hairline'), url(http://fonts.gstatic.com/s/lato/v10/boeCNmOCCh-EWFLSfVffDg.woff) format('woff');
+    src: local('Lato Hairline'), local('Lato-Hairline'), url(../font/boeCNmOCCh-EWFLSfVffDg.woff) format('woff');
 }
 @font-face {
     font-family: 'Lato';
     font-style: normal;
     font-weight: 300;
-    src: local('Lato Light'), local('Lato-Light'), url(http://fonts.gstatic.com/s/lato/v10/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
+    src: local('Lato Light'), local('Lato-Light'), url(../font/KT3KS9Aol4WfR6Vas8kNcg.woff) format('woff');
 }
 @font-face {
     font-family: 'Lato';
